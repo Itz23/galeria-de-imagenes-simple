@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8"/>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1"></script>
+    <link rel="stylesheet" href="styles/index.processed.css">
+    <title>Galeria del espacio</title>
+  </head>
+<body>
+  <div class="center">
+    <a href="#" class="button">Galeria de imagenes sobre el espacio</a>
+  </div>
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img src="img/planetas.jpg" style="width:100%; height:700px;">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="img/planetas2.jpg" style="width:100%; height: 700px;">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img src="img/astronauta.jpg" style="width:100%; height: 700px;">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="img/nebula.jpg" style="width:100%; height: 700px;">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="img/nebuGalaxia.jpg" style="width:100%; height: 700px;">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="img/astronauta2.jpg" style="width:100%; height: 700px;">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="img/planetas.jpg" style="width:100%; height: 115px;" onclick="currentSlide(1)" alt="Estrellas">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img/planetas2.jpg" style="width:100%; height: 115px;" onclick="currentSlide(2)" alt="Planetas">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img/astronauta.jpg" style="width:100%; height: 115px;" onclick="currentSlide(3)" alt="Astronauta">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img/nebula.jpg" style="width:100%; height: 115px;" onclick="currentSlide(4)" alt="Nebula">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img/nebuGalaxia.jpg" style="width:100%; height: 115px;" onclick="currentSlide(5)" alt="Nebulosa y galaxias">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="img/astronauta2.jpg" style="width:100%; height: 115px;" onclick="currentSlide(6)" alt="Astronauta y planetas">
+    </div>
+  </div>
+ 
+</div>
+</body>
+<script src="miScript/myScript.js"></script>
+<script src="anime.min.js"></script>
+<script>
+const button = document.querySelector('.button');
+
+const mouseHoverAnimation = () => {
+  anime({
+      targets: button,
+      width: '100%',
+      scale: {
+          delay: 800,
+          value: 1.5
+      },
+      duration: 1500
+  })
+}
+
+const mouseOutAnimation = () => {
+  anime({
+      targets: button,
+      width: '50%',
+      scale: {
+          delay: 800,
+          value: 1
+      },
+      duration: 1500
+  })
+}
+
+button.addEventListener('mouseover', mouseHoverAnimation)
+button.addEventListener('mouseout', mouseOutAnimation)
+</script>
+</html>
